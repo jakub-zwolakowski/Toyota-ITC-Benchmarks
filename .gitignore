@@ -1,0 +1,4 @@
+.vscode
+*.pyc
+tis_misra_report
+.trustinsoft/tis_report.html

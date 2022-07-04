@@ -18,6 +18,18 @@ int main(int argc,char*argv[])
 		vflag = (int)floor((int)vflag_copy%1000);
 		printf("vflag_file = %d vflag_func = %d vflag_copy =%d \n" , vflag_file, vflag,vflag_copy);
 
+	#ifdef __TRUSTINSOFT_BUGFIX__
+		/*
+		 * FAULTY TEST:
+		 * Somehow this test driver does not call the appropriate "X_main()"
+		 * function as all the other test drivers do.
+		 */
+		if (vflag_file == 3 || vflag_file == 888)
+		{
+			dynamic_buffer_underrun_main();
+		}
+	#endif
+
 		printf("Printed from main function ");
 	}
 	else
