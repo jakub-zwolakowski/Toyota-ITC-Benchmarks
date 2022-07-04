@@ -1,0 +1,442 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "properties": {
+        "id": 199328,
+        "version": "1.0.0",
+        "type": "source code",
+        "status": "candidate",
+        "submissionDate": "2016-07-22",
+        "language": "c",
+        "author": "Toyota ITC",
+        "description": "Defect Type: Pointer related defects\nDefect Sub-type: Comparison NULL with function pointer\nDescription: Defect Free Code to identify false positives to identify the wrong arguments fed into a function pointer\nCreated on: Oct 8, 2013\nAuthor: hemalatha\nThe test case contains coincidental weaknesses along with intended ones as follows for file wrong_arguments_func_pointer.c:\n* line(s): 434,446,457,458,587 CWE-476\n* line(s): 518 CWE-561",
+        "state": "mixed",
+        "pairs": [
+          "199327-v1.0.0"
+        ]
+      },
+      "tool": {
+        "driver": {
+          "name": "SARD - SAMATE",
+          "fullName": "Software Assurance Reference Dataset Project",
+          "informationUri": "https://samate.nist.gov/SARD/",
+          "version": "5.0.0",
+          "organization": "NIST",
+          "supportedTaxonomies": [
+            {
+              "name": "CWE",
+              "index": 0
+            }
+          ]
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/include/HeaderFile.h"
+          },
+          "length": 2062,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "ad9cfe17ebc6e6adc9e5890997d29cd085fb855c6174078ea8b083fab0044586"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/wrong_arguments_func_pointer.c"
+          },
+          "length": 19276,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "8a8831575b8a955b12dda849cd1a3bcb69abe6f854bc5254c9ea4fe441726be1"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/wrong_arguments_func_pointer_main.c"
+          },
+          "length": 930,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "d3785c7f5aaefde2f5acdf9dee05a31db56bedfe1434da88732df3a5db6d67be"
+          }
+        }
+      ],
+      "taxonomies": [
+        {
+          "name": "CWE",
+          "version": "4.6",
+          "informationUri": "https://cwe.mitre.org/data/published/cwe_v4.6.pdf",
+          "downloadUri": "https://cwe.mitre.org/data/xml/cwec_v4.6.xml.zip",
+          "organization": "MITRE",
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration"
+          },
+          "isComprehensive": false,
+          "taxa": [
+            {
+              "id": "476",
+              "name": "NULL Pointer Dereference"
+            },
+            {
+              "id": "561",
+              "name": "Dead Code"
+            },
+            {
+              "id": "628",
+              "name": "Function Call with Incorrectly Specified Arguments"
+            },
+            {
+              "id": "685",
+              "name": "Function Call With Incorrect Number of Arguments"
+            },
+            {
+              "id": "686",
+              "name": "Function Call With Incorrect Argument Type"
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "CWE-476",
+          "message": {
+            "text": "NULL Pointer Dereference."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 434
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 446
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 457,
+                  "endLine": 458
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 587
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "476",
+              "index": 0
+            }
+          ]
+        },
+        {
+          "ruleId": "CWE-561",
+          "message": {
+            "text": "Dead Code."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 518
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "561",
+              "index": 1
+            }
+          ]
+        },
+        {
+          "ruleId": "CWE-686",
+          "message": {
+            "text": "Function Call With Incorrect Argument Type."
+          },
+          "kind": "pass",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 73
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 93
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 113
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 138
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 223
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 252
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 297
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 350
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 379
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 419
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 486
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 524
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "686",
+              "index": 4
+            }
+          ]
+        },
+        {
+          "ruleId": "CWE-685",
+          "message": {
+            "text": "Function Call With Incorrect Number of Arguments."
+          },
+          "kind": "pass",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 157
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 177
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 452
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "685",
+              "index": 3
+            }
+          ]
+        },
+        {
+          "ruleId": "CWE-628",
+          "message": {
+            "text": "Function Call with Incorrectly Specified Arguments."
+          },
+          "kind": "pass",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/wrong_arguments_func_pointer.c",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 196
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "628",
+              "index": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
